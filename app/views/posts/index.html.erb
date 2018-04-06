@@ -1,3 +1,20 @@
 <% @posts.each do |post| %>
-  <div><%= post.title %></div>
-<% end %>
+  <div><%= link_to post.title, post_path(post) %></div>
+<% end %> 
+
+
+
+<!-- OUTDATED WAY -->
+<!-- <% @posts.each do |post| %>
+  <div><a href='<%= "/posts/#{post.id}" %>'><%= post.title %></a></div>
+<% end %> -->
+
+<!-- BETTER WAY -->
+<!-- <% @posts.each do |post| %>
+  <div><%= link_to post.title, "/posts/#{post.id}" %></div>
+<% end %> -->
+
+<!-- BEST WAY -->
+<!-- <% @posts.each do |post| %>
+  <div><%= link_to post.title, post_path(post) %></div>
+<% end %> -->
